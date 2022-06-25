@@ -1,0 +1,290 @@
+body {
+    font-family: 'Avenir', Helvetica, sans-serif !important;
+}
+
+.login-container {
+    min-height: 100vh;
+    background-color: black;
+    padding-left: 139px;
+    width: 96.75rem;
+}
+
+.left-login {
+    padding-top: 140px;
+}
+
+.left-login-text-header {
+    font-size: 56px;
+    font-weight: 800px;
+    color: white;
+}
+
+.left-login-text {
+    font-size: 18px;
+    font-weight: 400px;
+    color: #6A6A6A;
+    width: 453px;
+}
+
+.button-login {
+    width: 135px;
+    margin-top: 35px;
+}
+
+.button-register {
+    width: 135px;
+    margin-top: 35px;
+    text-decoration: none !important;
+    color: #B7B7B7 !important;
+}
+
+.form-login {
+    width: 416px;
+    height: 366px;
+    margin-top: 197px;
+    border-radius: 10px;
+    background-color: #181818;
+    padding: 41px 33px 29px;
+}
+
+.right-login-text {
+    font-weight: 900px;
+    font-size: 36px;
+    color: white;
+    width: 453px;
+}
+
+.form-margin {
+    margin-top: 20px;
+}
+
+input[type="email"] {
+    background-color: #D2D2D240;
+    border: 2px solid #BCBCBC;
+}
+
+input[type="file"] {
+    background-color: #D2D2D240;
+    border: 2px solid #BCBCBC;
+}
+
+input[type="password"] {
+    background-color: #D2D2D240;
+    border: 2px solid #BCBCBC;
+}
+
+input[type="text"] {
+    background-color: #D2D2D240;
+    border: 2px solid #BCBCBC;
+}
+
+.button-login-login {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.form-register {
+    width: 416px;
+    height: 550px;
+    margin-top: 110px;
+    border-radius: 10px;
+    background-color: #181818;
+    padding: 41px 33px 29px;
+}
+
+.form-margin-r {
+    margin-top: 5px;
+}
+
+select {
+    background-color: #D2D2D240 !important;
+    color: #5d646d !important;
+    border: 2px solid #BCBCBC !important;
+}
+
+textarea {
+    background-color: #D2D2D240 !important;
+    border: 2px solid #BCBCBC !important;
+}
+
+.user-container {
+    padding-top: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: black;
+    min-height: 90vh;
+    width: 100;
+    margin: 0;
+}
+
+.user-text {
+    font-size: 24px;
+    color: #F74D4D;
+    font-weight: 700;
+}
+
+.product-card {
+    background-color: #212121 !important;
+    padding: 0 !important;
+}
+
+.product-image {
+    margin: 0 !important;
+    width: 210px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-card-text {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+.profile-pict {
+    width: 300px;
+    border-radius: 5px;
+}
+
+.profile-card-text {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+.card-title-text {
+    color: #F74D4D;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.img-history {
+    margin: 10px;
+    width: 60px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.history-card {
+    background-color: #212121 !important;
+}
+
+.history-card-text {
+    color: white;
+    margin: 0;
+    font-size: 10px;
+}
+
+.history-card-date {
+    color: #F74D4D;
+    margin: 0;
+    font-size: 9px;
+}
+
+.img-detail {
+    width: 436px;
+    height: 555px;
+    object-fit: cover;
+}
+
+.detail-head-text {
+    color: #F74D4D;
+    margin: 0;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.detail-text {
+    color: white;
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.detail-price {
+    color: #F74D4D;
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.detail-container {
+    padding-top: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: black;
+    min-height: 90vh;
+    width: 100;
+    margin: 0;
+}
+
+.table-container {
+    padding-top: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: black;
+    min-height: 90vh;
+    width: 100;
+    margin: 0;
+}
+
+.table-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.button-table {
+    width: 135px;
+}
+
+.table {
+    table-layout: fixed;
+}
+
+.edit-container {
+    padding-top: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: black;
+    min-height: 90vh;
+    width: 100;
+    margin: 0;
+}
+
+.complain-container {
+    padding-top: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: black;
+    min-height: 90vh;
+    width: 100;
+    margin: 0;
+}
+
+.messages-box,
+.chat-box {
+  height: 80vh;  
+  overflow-y: scroll;
+}
+
+.complain-card {
+    background-color: black !important;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.img-complain {
+    margin: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-text {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+}
