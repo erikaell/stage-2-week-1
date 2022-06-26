@@ -26,7 +26,7 @@ function DetailProduct() {
   
         const data = {
           idProduct: product.id,
-          idSeller: product.user.id,
+          idSeller: product.users.id,
           price: product.price,
         };
   
