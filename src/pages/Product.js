@@ -1,34 +1,62 @@
-import data from '../dummyData/product'
-import { useState } from 'react'
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { useQuery } from 'react-query';
+import imgEmpty from '../assets/empty.svg';
+import { API } from '../config/api';
+
 
 function Product() {
-    const [datas] = useState(data)
+    const title = 'Shop';
+    document.title = 'DumbMerch | ' + title;
+  
+    let { data: products } = useQuery('productsCache', async () => {
+      const response = await API.get('/products');
+      return response.data.data;
+    });
+  
+    console.log(products);
 
 
     return (
+        // <>
+        // <Navbar />
         <div className='user-container'>
             <p className='user-text'>Product</p>
             <Container className='ms-0'>
+            {products?.length !== 0 ? (
                 <Row>
-                    {datas.map((data) => (
-                        <Col sm="2" key={data.id}>
+                    {products?.map((item, index) => (
+                        <Col sm="2" key={index}>
                             <Card className="product-card mb-2">
-                                <Card.Img variant="top" src={data.img} className='product-image' />
+                                <Card.Img variant="top" src={item.image} className='product-image' />
                                 <Card.Body>
-                                    <Link style={{ textDecoration: 'none' }} to={`/user/product/detail/${data.id}`}>
-                                        <Card.Title style={{ color: '#F74D4D', fontSize: '18px', fontWeight: '700' }}>{data.name}</Card.Title>
+                                    <Link style={{ textDecoration: 'none' }} to={`/user/product/detail/${item.id}`}>
+                                        <Card.Title style={{ color: '#F74D4D', fontSize: '18px', fontWeight: '700' }}>{item.name}</Card.Title>
                                     </Link>
-                                    <p className='product-card-text'>Rp. {data.price}</p>
-                                    <p className='product-card-text'>Stock: {data.stock}</p>
+                                    <p className='product-card-text'>Rp. {item.price}</p>
+                                    <p className='product-card-text'>Stock: {item.qty}</p>
                                 </Card.Body>
                             </Card>
                         </Col>
                     ))}
+                    
                 </Row>
+                          ) : (
+                            <Col>
+                              <div className="text-center pt-5">
+                                <img
+                                  src={imgEmpty}
+                                  className="img-fluid"
+                                  style={{ width: '40%' }}
+                                  alt="empty"
+                                />
+                                <div className="mt-3 text-danger">No data product</div>
+                              </div>
+                            </Col>
+                          )}
             </Container>
         </div>
+        // </>
     );
 }
 

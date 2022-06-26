@@ -1,14 +1,19 @@
 import data from '../dummyData/product'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { UserContext } from '../context/userContext'
 import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { Col, Row, Card, Button } from 'react-bootstrap'
+import Navbar from '../components/NavbarUser'
 
 function Profile() {
-
     const [datas] = useState(data)
 
+    const [state] = useContext(UserContext);
+
     return (
+        // <>
+        // <Navbar />
         <div className='user-container'>
             <div className='row'>
             <div className="col-md-3">
@@ -51,6 +56,7 @@ function Profile() {
             </div>
             </div>
         </div>
+        // </>
     );
 }
 

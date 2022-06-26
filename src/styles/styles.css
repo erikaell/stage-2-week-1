@@ -40,7 +40,7 @@ body {
 
 .form-login {
     width: 416px;
-    height: 366px;
+    max-height: 400px;
     margin-top: 197px;
     border-radius: 10px;
     background-color: #181818;
@@ -78,6 +78,16 @@ input[type="text"] {
     border: 2px solid #BCBCBC;
 }
 
+input[type="number"] {
+    background-color: #D2D2D240;
+    border: 2px solid #BCBCBC;
+}
+
+textarea {
+    background-color: #D2D2D240 !important;
+    border: 2px solid #BCBCBC !important;
+}
+
 .button-login-login {
     width: 100%;
     margin-top: 40px;
@@ -85,8 +95,8 @@ input[type="text"] {
 
 .form-register {
     width: 416px;
-    height: 550px;
-    margin-top: 110px;
+    max-height: 450px;
+    margin-top: 197px;
     border-radius: 10px;
     background-color: #181818;
     padding: 41px 33px 29px;
@@ -99,11 +109,6 @@ input[type="text"] {
 select {
     background-color: #D2D2D240 !important;
     color: #5d646d !important;
-    border: 2px solid #BCBCBC !important;
-}
-
-textarea {
-    background-color: #D2D2D240 !important;
     border: 2px solid #BCBCBC !important;
 }
 
@@ -287,4 +292,78 @@ textarea {
     color: white;
     font-size: 14px;
     margin: 0;
+}
+
+.card-auth {
+    background: #181818;
+    border-radius: 10px;
+    max-width: 416px;
+}
+
+.form input {
+    background: rgba(210, 210, 210, 0.25);
+    border: 2px solid #bcbcbc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    color: #ffffff;
+}
+
+.btn-login {
+    background: #f74d4d !important;
+    border-radius: 5px !important;
+  
+    font-style: normal !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    line-height: 25px !important;
+  
+    color: #ffffff !important;
+}
+
+.btn-register {
+    font-style: normal !important;
+    font-weight: 800 !important;
+    font-size: 18px !important;
+    line-height: 25px !important;
+  
+    color: #b7b7b7 !important;
+}
+
+.bg-black {
+    background-color: #0b0b0b;
+    color: #ffffff;
+}
+
+.text-auth-header {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 76px;
+}
+  
+.text-auth-parag {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+  
+    color: #6a6a6a;
+}
+
+.label-file-add-product {
+    background: #f74d4d;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.card-form-input {
+  background: rgba(210, 210, 210, 0.25);
+  border: 2px solid #bcbcbc;
+  box-sizing: border-box;
+  border-radius: 5px;
 }

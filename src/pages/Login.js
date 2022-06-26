@@ -1,28 +1,87 @@
 import { Form, Button } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png'
-import { useState } from 'react'
+import { useContext, useState } from 'react';
+import { UserContext } from '../context/userContext';
+import { useNavigate } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
+import { useMutation } from 'react-query';
+
+import { API } from '../config/api';
 
 function Login() {
+  let navigate = useNavigate();
 
-    const [state, setState] = useState({
-        email: '',
-        password: ''
-      })
-    
-      const handleOnChange = (e) => {
-        // setState here
-        setState({
-          ...state,
-          [e.target.name]: e.target.value
-        })
+  const title = 'Login';
+  document.title = 'DumbMerch | ' + title;
+
+  const [state, dispatch] = useContext(UserContext);
+
+  const [message, setMessage] = useState(null);
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
+
+  const { email, password } = form;
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = useMutation(async (e) => {
+    try {
+      e.preventDefault();
+
+      // Configuration
+      const config = {
+        headers: {
+          'Content-type': 'application/json',
+        },
+      };
+
+      // Data body
+      const body = JSON.stringify(form);
+
+      // Insert data for login process
+      const response = await API.post('/login', body, config);
+
+      // Checking process
+      if (response?.status === 200) {
+        // Send data to useContext
+        dispatch({
+          type: 'LOGIN_SUCCESS',
+          payload: response.data.data,
+        });
+
+        // Status check
+        if (response.data.data.status === 'Admin') {
+          navigate('/category');
+        } else {
+          navigate('/home');
+        }
+
+        const alert = (
+          <Alert variant="success" className="py-1">
+            Login success
+          </Alert>
+        );
+        setMessage(alert);
       }
-    
-      const handleOnSubmit = (e) => {
-        e.preventDefault()
-        //print state value with console.log here
-        console.log(state)
-      }
+    } catch (error) {
+      const alert = (
+        <Alert variant="danger" className="py-1">
+          Login failed
+        </Alert>
+      );
+      setMessage(alert);
+      console.log(error);
+    }
+  });
+
     
     return (
         <div className="login-container row">
@@ -36,12 +95,13 @@ function Login() {
                 <div className="col-md-6">
                     <div className="form-login">
                         <p className="right-login-text">Login</p>
-                        <Form onSubmit={handleOnSubmit}>
+                        {message && message}
+                        <Form onSubmit={(e) => handleSubmit.mutate(e)}>
                         <Form.Group>
-                            <Form.Control onChange={handleOnChange} value={state.email} name="email" type="email" placeholder="Email"></Form.Control>
+                            <Form.Control onChange={handleChange} value={email} name="email" type="email" placeholder="Email"></Form.Control>
                         </Form.Group>
                         <Form.Group className="form-margin">
-                            <Form.Control onChange={handleOnChange} value={state.password} name="password" type="password" placeholder="Password" ></Form.Control>
+                            <Form.Control onChange={handleChange} value={password} name="password" type="password" placeholder="Password" ></Form.Control>
                         </Form.Group>
                         <Button variant="danger" type="submit" className="button-login-login">Login</Button>
                         </Form>
